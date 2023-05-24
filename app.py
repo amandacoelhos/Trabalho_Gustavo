@@ -4,7 +4,7 @@ import streamlit as st
 import joblib 
 
 # loading the trained model.
-model = joblib.load('model/modelo-amanda.pkl')
+model = joblib.load('modelo-amanda.pkl')
 
 # carregando uma amostra dos dados.
 dataset = pd.read_csv('StudentsPerformance.csv') 
