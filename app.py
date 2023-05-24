@@ -89,7 +89,7 @@ if btn_predict:
     print(data_teste)
 
     #realiza a predição
-    result = predict_model(model, data=data_teste)["Label"]
+    result = predict_model(model, data=data_teste)
     
     st.subheader("A nota final de matematica para o aluno é:")
     result = (round(result[0],2))
