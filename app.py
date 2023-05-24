@@ -1,9 +1,11 @@
 import pandas as pd
 import streamlit as st
 from pycaret.regression import *
+import joblib 
+
 
 # loading the trained model.
-model = load_model('modelo-amanda')
+model = joblib.load('modelo-amanda.pkl')
 
 # carregando uma amostra dos dados.
 dataset = pd.read_csv('StudentsPerformance.csv') 
@@ -89,7 +91,7 @@ if btn_predict:
     print(data_teste)
 
     #realiza a predição
-    result = predict_model(model, data=data_teste)
+    result = model.predict(data_teste)
     
     st.subheader("A nota final de matematica para o aluno é:")
     result = (round(result[0],2))
