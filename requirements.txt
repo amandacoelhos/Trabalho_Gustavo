@@ -3,3 +3,4 @@ streamlit==1.22.0
 joblib==1.2.0
 scikit-learn==1.0.2
 numpy<1.20
+pycaret==3.0.2
