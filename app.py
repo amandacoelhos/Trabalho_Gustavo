@@ -1,10 +1,9 @@
 import pandas as pd
 import streamlit as st
-#from pycaret.regression import *
-import joblib 
+from pycaret.regression import *
 
 # loading the trained model.
-model = joblib.load('modelo-amanda.pkl')
+model = load_model('modelo-amanda')
 
 # carregando uma amostra dos dados.
 dataset = pd.read_csv('StudentsPerformance.csv') 
@@ -13,7 +12,7 @@ dataset = pd.read_csv('StudentsPerformance.csv')
 
 # título
 st.title("Data App - Predição de Notas de Matematica")
-
+load_model
 # subtítulo
 st.markdown("Este é um Data App utilizado para exibir a solução de Machine Learning para o problema de predição de Notas de Matematica.")
 
@@ -90,7 +89,7 @@ if btn_predict:
     print(data_teste)
 
     #realiza a predição
-    result = model.predict(data_teste)
+    result = predict_model(data_teste)
     
     st.subheader("A nota final de matematica para o aluno é:")
     result = (round(result[0],2))
